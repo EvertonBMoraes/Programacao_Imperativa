@@ -54,7 +54,6 @@ Everton Barros De Moraes
 Vinícios Borba
 Gustavo Melchior
 Paulo César Xavier
---
 Raphael Corradini
 Tiago De Santana Batista
 Guilherme Moreira Carlos
