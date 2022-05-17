@@ -15,23 +15,25 @@ function divisão(x, y) {
 }
 
 function quadradoDoNumero(x) {
-  return x ** 2;
+  return multiplicação(x, x);
 }
 
 function raizDoNumero(x) {
-  return x ** (1 / 2);
+  return x ** divisão(1,2);
 }
 
 function mediaDeTresNumeros(x, y, z) {
-  return (x + y + z) / 3;
+  let parte1 = soma(x, y);
+  let parte2 = soma(parte1, z);
+  return divisão(parte2, 3);
 }
 
 function calculaPorcentagem(x, y) {
-  return (x * y) / 100;
+  return divisão(multiplicação(x,y),100);
 }
 
 function geradorDePorcentagem(x, y) {
-  return (x / y) * 100;
+  return multiplicação(divisão(x,y),100);
 }
 
 console.log(
@@ -46,7 +48,6 @@ resultado da média: ${mediaDeTresNumeros(3, 5, 6).toFixed(1)}
 resultado do cálculo da porcentagem: ${calculaPorcentagem(300, 7).toFixed(0)}
 resultado do gerador de porcentagem: ${geradorDePorcentagem(20, 200).toFixed(1)}%`
 );
-
 
 /*
 Equipe 5
