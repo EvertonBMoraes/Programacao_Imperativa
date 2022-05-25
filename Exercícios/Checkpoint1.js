@@ -5,10 +5,9 @@ function microondas(opcao, tempo) {
     console.log("A comida queimou!!");
   } else if (tempo > opcao * 3) {
     console.log("Kabumm!! :( ");
-  } else if (tempo >= opcao && tempo <= opcao * 2 ||tempo == "p") {
+  } else if ((tempo >= opcao && tempo <= opcao * 2) || tempo == "p") {
     console.log("Prato pronto, bom apetite!!! ;)");
-  } 
-  else {
+  } else {
     console.log("Digite um tempo válido"); // qualquer coisa diferente de número
   }
 }
@@ -17,7 +16,7 @@ console.log(`
 
 Opções de preparo:
 
-                 Tempo Padrão
+ N°              Tempo Padrão
 (1) Pipoca     = 10 segundos
 (2) Macarrão   = 08 segundos
 (3) Carne      = 15 segundos
@@ -55,9 +54,9 @@ switch (prato) {
     return console.log("Prato inexistente");
 }
 
-let tempo = readlineSync.question(`--------------------------------------------------------
+let tempo =
+  readlineSync.question(`--------------------------------------------------------
 
-Digite o tempo de preparo em segundos("p" para default): `
-);
+Digite o tempo de preparo em segundos("p" para default): `);
 
 microondas(opcao, tempo);
