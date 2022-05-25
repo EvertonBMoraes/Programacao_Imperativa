@@ -15,4 +15,5 @@ console.log(!logico2)
 
 'XOR = ou exclusivo'
 
+
  

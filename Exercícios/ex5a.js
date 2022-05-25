@@ -21,5 +21,6 @@ function imc(nome, sobrenome, idade, peso, altura) {
     "Sua altura?(somente numeros e em metros) "
   );
 
+  
  imc(nome, sobrenome, idade, peso, altura);
 
