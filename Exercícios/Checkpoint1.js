@@ -5,7 +5,7 @@ function microondas(opcao, tempo) {
     console.log("A comida queimou!!");
   } else if (tempo > opcao * 3) {
     console.log("Kabumm!! :( ");
-  } else if ((tempo >= opcao && tempo <= opcao * 2) || tempo == "p") {
+  } else if ((tempo >= opcao && tempo <= opcao * 2) || tempo == "p" || tempo == "P") {
     console.log("Prato pronto, bom apetite!!! ;)");
   } else {
     console.log("Digite um tempo válido"); // qualquer coisa diferente de número
@@ -51,7 +51,7 @@ switch (prato) {
     console.log("Você selecionou Brigadeiro");
     break;
   default:
-    return console.log("Prato inexistente");
+    console.log("Prato inexistente");
 }
 
 let tempo =
