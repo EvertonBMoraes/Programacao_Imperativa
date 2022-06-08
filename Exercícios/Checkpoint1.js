@@ -5,11 +5,15 @@ function microondas(opcao, tempo) {
     console.log("A comida queimou!!");
   } else if (tempo > opcao * 3) {
     console.log("Kabumm!! :( ");
-  } else if ((tempo >= opcao && tempo <= opcao * 2) || tempo == "p" || tempo == "P") {
-    console.log("Prato pronto, bom apetite!!! ;)");
+  } else if (
+    (tempo >= opcao && tempo <= opcao * 2) ||
+    tempo == "p" ||
+    tempo == "P"
+  ) {
   } else {
     console.log("Digite um tempo válido"); // qualquer coisa diferente de número
   }
+  console.log("Prato pronto, bom apetite!!! ;)");
 }
 
 console.log(`
@@ -27,31 +31,32 @@ Opções de preparo:
 `);
 
 let readlineSync = require("readline-sync");
-let prato = readlineSync.question("Escolha o numero do prato: ");
+let prato = readlineSync.questionInt("Escolha o numero do prato: ");
 
 switch (prato) {
-  case "1":
+  case 1:
     var opcao = 10; // para fazer dessa forma foi necessário utilizar 'var'
     console.log("Você selecionou Pipoca");
     break;
-  case "2":
+  case 2:
     var opcao = 8;
     console.log("Você selecionou Macarrão");
     break;
-  case "3":
+  case 3:
     var opcao = 15;
     console.log("Você selecionou Carne");
     break;
-  case "4":
+  case 4:
     var opcao = 12;
     console.log("Você selecionou Feijão");
     break;
-  case "5":
+  case 5:
     var opcao = 8;
     console.log("Você selecionou Brigadeiro");
     break;
   default:
     console.log("Prato inexistente");
+    return;
 }
 
 let tempo =
