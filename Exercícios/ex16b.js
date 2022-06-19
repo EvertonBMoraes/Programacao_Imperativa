@@ -19,17 +19,17 @@ this.titularConta = titularConta;
 }
 
 let clientes = [
- cliente1 = new contaBancaria(10001,"conta corrente",100.90,"Everton Moraes"),
- cliente2 = new contaBancaria(10002,"poupança",75000.33,"Antonio Mesquita"),
- cliente3 = new contaBancaria(10003,"conta corrente",2300.00,"Thiago"),
- cliente4 = new contaBancaria(10004,"poupança",250.00,"Gabriel"),
- cliente5 = new contaBancaria(10005,"conta corrente",150.90,"Gilmar"),
- cliente6 = new contaBancaria(10006,"poupança",7000.33,"Andre"),
- cliente7 = new contaBancaria(10007,"conta corrente",350.00,"Gustavo"),
- cliente8 = new contaBancaria(10008,"poupança",250.00,"Monica"),
- cliente9 = new contaBancaria(10009,"conta corrente",20.00,"Lucas"),
- cliente10 = new contaBancaria(10010,"poupança",20.00,"Ana"),
- cliente11 = new contaBancaria(10011,"poupança",25.30,"Paulo"),
+ cliente1 = new contaBancaria('10001',"conta corrente",100.90,"Everton Moraes"),
+ cliente2 = new contaBancaria('10002',"poupança",75000.33,"Antonio Mesquita"),
+ cliente3 = new contaBancaria('10003',"conta corrente",2300.00,"Thiago"),
+ cliente4 = new contaBancaria('10004',"poupança",250.00,"Gabriel"),
+ cliente5 = new contaBancaria('10005',"conta corrente",150.90,"Gilmar"),
+ cliente6 = new contaBancaria('10006',"poupança",7000.33,"Andre"),
+ cliente7 = new contaBancaria('10007',"conta corrente",350.00,"Gustavo"),
+ cliente8 = new contaBancaria('10008',"poupança",250.00,"Monica"),
+ cliente9 = new contaBancaria('10009',"conta corrente",20.00,"Lucas"),
+ cliente10 = new contaBancaria('10010',"poupança",20.00,"Ana"),
+ cliente11 = new contaBancaria('10011',"poupança",25.30,"Paulo"),
 ]
 
 /* O líder tecnológico está muito feliz com nosso trabalho até agora. A essa altura já temos um banco de dados com 10 clientes do banco, provavelmente alojados em 10 variáveis diferentes (assumindo que cada variável é um objeto que foi criado com uma função construtora). A partir disso, eles nos pedem as seguintes características. */
