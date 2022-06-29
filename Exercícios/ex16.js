@@ -39,4 +39,4 @@ function Pessoa2(nome, altura, peso) {
 }
 // qunado a função construtora da forma this precisa do new antes da chamada da função
 const pessoa6 = new Pessoa2("Fulano de Tal", 1.8, 90); 
-console.log(pessoa6);
+console.log(Pessoa2);
