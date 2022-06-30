@@ -9,7 +9,7 @@ function estudante(nome, qtdFaltas, notas) {
       let media = 0;
       for (let i = 0; i < this.notas.length; i++) {
         const nota = this.notas[i];
-        media += nota / this.notas.length; // arredonda a média para cima com uma casa decimal, por ex: 7.66 = 7.7
+        media += nota / this.notas.length; //arredonda a média para cima com uma casa decimal, por ex: aluno com 9 faltas e nota 7.66 -> 7.7 , foi aprovado pelo arredondamento
       }
       return media.toFixed(1);
     });
@@ -32,7 +32,7 @@ faltas máximas (number) e uma lista de estudantes (um array composto pelos alun
 
 curso = {
   "nome do Curso": "Desenvolvedor Back-end",
-  "nota de aprovação": 7,
+  "nota de aprovação": 7,  //nota de aprovação e faltas máximas podem ser alteradas conforme critério de aprovação
   "faltas máximas": 9,
   "lista de estudantes": [everton, lucas, maria],
   "adicionar aluno": (nome, qtdFaltas, notas) => {
@@ -44,7 +44,7 @@ curso = {
       (elemento) => elemento.nome === nome
     );
 
-    if (aluno === undefined) { //Caso o nome inserido na busca não exista, undefined
+    if (aluno === undefined) {  //foi criada essa saída caso o nome inserido na busca ao chamar o método não exista , undefined
       return `
 -------------------------------------
 
@@ -53,7 +53,8 @@ Aluno não encontrado!!!
 -------------------------------------
 `;
     } else if (
-      (aluno.calcularMedia() >= curso["nota de aprovação"] + curso["nota de aprovação"] * 0.1 &&
+      (aluno.calcularMedia() >=
+        curso["nota de aprovação"] + curso["nota de aprovação"] * 0.1 &&
         aluno.faltas() === curso["faltas máximas"]) ||
       (aluno.calcularMedia() >= curso["nota de aprovação"] &&
         aluno.faltas() < curso["faltas máximas"])
@@ -68,7 +69,7 @@ Aluno não encontrado!!!
     for (const aluno of curso["lista de estudantes"]) {
       const resultado = curso.resultado(aluno.nome);
       if (resultado === true) {
-        arrayResultado.push(`${aluno.nome} foi aprovado(a)`);
+        arrayResultado.push(`${aluno.nome} foi aprovado(a)`);  //dei preferência para exibir o nome do aluno e se ele foi aprovado ou reprovado por ser mais amigável do que somente “true” ou “false”
       } else {
         arrayResultado.push(`${aluno.nome} foi reprovado(a)`);
       }
