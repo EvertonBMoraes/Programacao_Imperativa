@@ -32,7 +32,7 @@ faltas máximas (number) e uma lista de estudantes (um array composto pelos alun
 
 curso = {
   "nome do Curso": "Desenvolvedor Back-end",
-  "nota de aprovação": 7,  //nota de aprovação e faltas máximas podem ser alteradas conforme critério de aprovação
+  "nota de aprovação": 7, //nota de aprovação e faltas máximas podem ser alteradas conforme critério de aprovação
   "faltas máximas": 9,
   "lista de estudantes": [everton, lucas, maria],
   "adicionar aluno": (nome, qtdFaltas, notas) => {
@@ -44,7 +44,8 @@ curso = {
       (elemento) => elemento.nome === nome
     );
 
-    if (aluno === undefined) {  //foi criada essa saída caso o nome inserido na busca ao chamar o método não exista , undefined
+    if (aluno === undefined) {
+      //foi criada essa saída caso o nome inserido na busca ao chamar o método não exista , undefined
       return `
 -------------------------------------
 
@@ -67,17 +68,17 @@ Aluno não encontrado!!!
   final: () => {
     const arrayResultado = [];
     for (const aluno of curso["lista de estudantes"]) {
-      const resultado = curso.resultado(aluno.nome);
+      const resultado = curso.resultado(aluno.nome); ////dei preferência para exibir o nome do aluno e se ele foi aprovado ou reprovado por ser mais amigável do que somente “true” ou “false”
       if (resultado === true) {
-        arrayResultado.push(`${aluno.nome} foi aprovado(a)`);  //dei preferência para exibir o nome do aluno e se ele foi aprovado ou reprovado por ser mais amigável do que somente “true” ou “false”
+        arrayResultado.push(`${aluno.nome} foi aprovado(a)`);
       } else {
         arrayResultado.push(`${aluno.nome} foi reprovado(a)`);
       }
+      // arrayResultado.push(resultado) // retorna somente "true" ou "false"
     }
     return arrayResultado;
   },
 };
-
 /* 4. Crie o método que permite adicionar alunos à lista do curso, ou seja, quando chamamos nosso método em nosso 
 objeto curso, deverá adicionar um aluno a mais na propriedade lista de estudantes do objeto curso. */
 
