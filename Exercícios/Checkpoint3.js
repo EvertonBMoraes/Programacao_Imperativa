@@ -9,7 +9,7 @@ function estudante(nome, qtdFaltas, notas) {
       let media = 0;
       for (let i = 0; i < this.notas.length; i++) {
         const nota = this.notas[i];
-        media += nota / this.notas.length; // arredonda a média para cima
+        media += nota / this.notas.length; // arredonda a média para cima com uma casa decimal, por ex: 7.66 = 7.7
       }
       return media.toFixed(1);
     });
@@ -32,8 +32,8 @@ faltas máximas (number) e uma lista de estudantes (um array composto pelos alun
 
 curso = {
   "nome do Curso": "Desenvolvedor Back-end",
-  "nota de aprovação": 5,
-  "faltas máximas": 4,
+  "nota de aprovação": 7,
+  "faltas máximas": 9,
   "lista de estudantes": [everton, lucas, maria],
   "adicionar aluno": (nome, qtdFaltas, notas) => {
     const addAluno = new estudante(nome, qtdFaltas, notas);
@@ -44,7 +44,7 @@ curso = {
       (elemento) => elemento.nome === nome
     );
 
-    if (aluno === undefined) {
+    if (aluno === undefined) { //Caso o nome inserido na busca não exista, undefined
       return `
 -------------------------------------
 
@@ -53,8 +53,10 @@ Aluno não encontrado!!!
 -------------------------------------
 `;
     } else if (
-      (aluno.calcularMedia() >= 7.7 && aluno.faltas() === 9) ||
-      (aluno.calcularMedia() >= 7 && aluno.faltas() < 9)
+      (aluno.calcularMedia() >= curso["nota de aprovação"] + curso["nota de aprovação"] * 0.1 &&
+        aluno.faltas() === curso["faltas máximas"]) ||
+      (aluno.calcularMedia() >= curso["nota de aprovação"] &&
+        aluno.faltas() < curso["faltas máximas"])
     ) {
       return true;
     } else {
@@ -62,14 +64,16 @@ Aluno não encontrado!!!
     }
   },
   final: () => {
-    for (const retorno of curso["lista de estudantes"]) {
-      const resultados = curso.resultado(retorno.nome)
-      if (resultados === true) {
-        console.log("Aprovado(a)");
+    const arrayResultado = [];
+    for (const aluno of curso["lista de estudantes"]) {
+      const resultado = curso.resultado(aluno.nome);
+      if (resultado === true) {
+        arrayResultado.push(`${aluno.nome} foi aprovado(a)`);
       } else {
-        console.log('Reprovado(a)');
+        arrayResultado.push(`${aluno.nome} foi reprovado(a)`);
       }
     }
+    return arrayResultado;
   },
 };
 
@@ -77,6 +81,8 @@ Aluno não encontrado!!!
 objeto curso, deverá adicionar um aluno a mais na propriedade lista de estudantes do objeto curso. */
 
 curso["adicionar aluno"]("Carlos Massa", 4, [5, 5, 5]);
+curso["adicionar aluno"]("Manuel Ribeiro", 6, [10, 10, 8]);
+curso["adicionar aluno"]("Evandro Mesquita", 8, [7, 7, 7]);
 
 /* 5. Crie um método para o objeto curso que receba um aluno (como parâmetro) e retorne true se ele aprovou no curso ou false em caso de reprovação. 
 Para ser aprovado, o aluno tem que ter uma média igual ou acima da nota de aprovação  e ter menos faltas que faltas máximas. 
@@ -84,5 +90,4 @@ Se tiver a mesma quantidade, tem que estar 10% acima da nota de aprovação. */
 
 /* 6. Crie um método para o objeto curso que percorra a lista de estudantes e retorne um array de booleanos com os resultados se os alunos aprovaram ou não. */
 
-
-curso.final();
+console.log(curso.final());
