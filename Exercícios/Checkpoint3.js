@@ -68,13 +68,13 @@ Aluno não encontrado!!!
   final: () => {
     const arrayResultado = [];
     for (const aluno of curso["lista de estudantes"]) {
-      const resultado = curso.resultado(aluno.nome); ////dei preferência para exibir o nome do aluno e se ele foi aprovado ou reprovado por ser mais amigável do que somente “true” ou “false”
+      const resultado = curso.resultado(aluno.nome); //dei preferência para exibir o nome do aluno e se ele foi aprovado ou reprovado por ser mais amigável do que somente “true” ou “false”
       if (resultado === true) {
         arrayResultado.push(`${aluno.nome} foi aprovado(a)`);
       } else {
         arrayResultado.push(`${aluno.nome} foi reprovado(a)`);
       }
-      // arrayResultado.push(resultado) // retorna somente "true" ou "false"
+      /* arrayResultado.push(resultado) */ // retorna somente "true" ou "false"
     }
     return arrayResultado;
   },
